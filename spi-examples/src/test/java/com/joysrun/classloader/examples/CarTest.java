@@ -1,8 +1,8 @@
-package com.joysrun.spi.examples;
+package com.joysrun.classloader.examples;
 
+import com.joysrun.spi.examples.Car;
 import org.junit.Test;
 
-import javax.smartcardio.Card;
 import java.util.ServiceLoader;
 
 /**
