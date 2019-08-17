@@ -1,4 +1,4 @@
-package com.joysrun.classloader.examples;
+package com.joysrun.classloader.examples.classLoader;
 
 import org.junit.Test;
 

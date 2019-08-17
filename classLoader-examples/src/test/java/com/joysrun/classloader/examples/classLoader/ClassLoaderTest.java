@@ -1,4 +1,4 @@
-package com.joysrun.classloader.examples;
+package com.joysrun.classloader.examples.classLoader;
 
 import org.junit.Test;
 
@@ -16,7 +16,7 @@ public class ClassLoaderTest {
     @Test
     public void classForNameTest() {
         try {
-            Class.forName("com.joysrun.classloader.examples.ClassLoaderTest").newInstance();
+            Class.forName("com.joysrun.classloader.examples.classLoader.ClassLoaderTest").newInstance();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
@@ -29,7 +29,7 @@ public class ClassLoaderTest {
     @Test
     public void myClassLoaderTest() {
         try {
-            String className = "com.joysrun.classloader.examples.ClassLoaderTest";
+            String className = "com.joysrun.classloader.examples.classLoader.ClassLoaderTest";
 
             ClassLoaderTest loaderTest = (ClassLoaderTest) new MyClassLoader().loadClass(className).newInstance();
 
