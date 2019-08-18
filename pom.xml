@@ -17,6 +17,7 @@
         <module>spi-examples</module>
         <module>spi-examples2</module>
         <module>classLoader-examples</module>
+        <module>reflection-examples</module>
     </modules>
     <packaging>pom</packaging>
 
