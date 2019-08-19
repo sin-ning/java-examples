@@ -2,16 +2,73 @@ package com.joysrun.reflection.examples;
 
 import org.junit.Test;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * author: sin
  * time: 2019-08-18 19:37
  */
 public class ReflectionTest {
+
+    @Test
+    public void mapDataTest() throws NoSuchFieldException, IllegalAccessException, InstantiationException {
+        Field field = InternalObject.class.getDeclaredField("data");
+        field.setAccessible(true);
+
+        InternalObject internalObject = InternalObject.class.newInstance();
+        Map<String, String> data = (Map<String, String>) field.get(internalObject);
+        for (int i = 0; i < 10; i++) {
+            data.put(String.valueOf(i), String.valueOf(i));
+        }
+
+        // 设置 data
+        field.set(internalObject, data);
+
+//        for (Map.Entry<String, String> entry : data.entrySet()) {
+//            System.err.println(entry);
+//        }
+
+        System.err.println(internalObject);
+    }
+
+    @Test
+    public void arrayNewInstanceTest() {
+        int size = 10;
+        String[] names = (String[]) Array.newInstance(String.class, size);
+        for (int i = 0; i < size; i++) {
+            names[i] = String.valueOf(i);
+        }
+        for (String name : names) {
+            System.err.println("name: " + name);
+        }
+    }
+
+    @Test
+    public void privateMethodInvokerTest() throws NoSuchMethodException, IllegalAccessException, InstantiationException, InvocationTargetException {
+        System.err.println("All method...");
+
+        for (Method declaredMethod : InternalObject.class.getDeclaredMethods()) {
+            System.err.println(declaredMethod);
+        }
+
+        System.err.println("Invoker private method.");
+        InternalObject internalObject = InternalObject.class.newInstance();
+        Method showMethod = InternalObject.class.getDeclaredMethod("show");
+
+        // private access set true
+        showMethod.setAccessible(true);
+        showMethod.invoke(internalObject);
+    }
+
+    @Test
+    public void constructorNewInstance2Test() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+        InternalObject internalObject = InternalObject.class.getConstructor(Integer.class).newInstance(200);
+        System.err.println(internalObject.init);
+    }
 
     @Test
     public void constructorNewInstanceTest() throws IllegalAccessException, InvocationTargetException, InstantiationException {
@@ -50,15 +107,28 @@ public class ReflectionTest {
     // test class
 
     public static class InternalObject {
-        private int init = -1;
+        private Integer init = -1;
+
+        private Map<String, String> data = new HashMap<>();
 
         public InternalObject() {
 
         }
 
-        public InternalObject(int init) {
+        public InternalObject(Integer init) {
             this.init = init;
         }
 
+        private void show() {
+            System.err.println("show method...");
+        }
+
+        @Override
+        public String toString() {
+            return "InternalObject{" +
+                    "init=" + init +
+                    ", data=" + data +
+                    '}';
+        }
     }
 }
