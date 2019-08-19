@@ -21,6 +21,7 @@
         <module>spring-boot</module>
         <module>java-compiler-examples</module>
         <module>dynamic-proxy-examples</module>
+        <module>bean-examples</module>
     </modules>
     <packaging>pom</packaging>
 
