@@ -20,6 +20,7 @@
         <module>reflection-examples</module>
         <module>spring-boot</module>
         <module>java-compiler-examples</module>
+        <module>dynamic-proxy-examples</module>
     </modules>
     <packaging>pom</packaging>
 
