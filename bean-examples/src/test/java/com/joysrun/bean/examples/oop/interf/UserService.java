@@ -1,4 +1,4 @@
-package com.joysrun.bean.examples.interf;
+package com.joysrun.bean.examples.oop.interf;
 
 /**
  * author: sin

@@ -1,4 +1,4 @@
-package com.joysrun.bean.examples.oop;
+package com.joysrun.bean.examples.oop.obj;
 
 /**
  * author: sin

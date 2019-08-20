@@ -1,8 +1,8 @@
-package com.joysrun.bean.examples;
+package com.joysrun.bean.examples.oop;
 
-import com.joysrun.bean.examples.oop.Person;
-import com.joysrun.bean.examples.oop.Student;
-import com.joysrun.bean.examples.oop.Worker;
+import com.joysrun.bean.examples.oop.obj.Person;
+import com.joysrun.bean.examples.oop.obj.Student;
+import com.joysrun.bean.examples.oop.obj.Worker;
 import org.junit.Before;
 import org.junit.Test;
 

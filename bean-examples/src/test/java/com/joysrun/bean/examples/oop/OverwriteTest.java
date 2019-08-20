@@ -1,4 +1,4 @@
-package com.joysrun.bean.examples;
+package com.joysrun.bean.examples.oop;
 
 import org.junit.Test;
 

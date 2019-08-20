@@ -1,10 +1,10 @@
-package com.joysrun.bean.examples.interf;
+package com.joysrun.bean.examples.oop.interf;
 
 /**
  * author: sin
  * time: 2019-08-20 08:41
  */
-public abstract class AbstractService {
+public abstract class AbstractService implements IService {
 
     public static final int s1 = 100;
 
@@ -19,4 +19,6 @@ public abstract class AbstractService {
     private AbstractService(String name) {
 
     }
+
+    public abstract void showName2();
 }

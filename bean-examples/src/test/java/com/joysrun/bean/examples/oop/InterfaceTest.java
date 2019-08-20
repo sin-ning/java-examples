@@ -1,7 +1,7 @@
-package com.joysrun.bean.examples;
+package com.joysrun.bean.examples.oop;
 
-import com.joysrun.bean.examples.interf.IService;
-import com.joysrun.bean.examples.interf.UserService;
+import com.joysrun.bean.examples.oop.interf.IService;
+import com.joysrun.bean.examples.oop.interf.UserService;
 import org.junit.Test;
 
 /**
