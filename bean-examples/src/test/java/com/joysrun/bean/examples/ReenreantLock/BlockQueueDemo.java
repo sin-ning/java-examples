@@ -83,7 +83,6 @@ public class BlockQueueDemo {
         BlockQueueDemo resource = new BlockQueueDemo();
         Producer producer = new Producer(resource);
         Consumer consumer = new Consumer(resource);
-
         new Thread(producer).start();
 
         Thread.sleep(1000L);
