@@ -1,6 +1,7 @@
 package com.joysrun.bean.examples.exception;
 
 import org.junit.Test;
+import org.omg.SendingContext.RunTime;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -29,7 +30,7 @@ public class ExceptionInterfaceOverwriteTest {
     static class B implements A {
 
         @Override
-        public void show() throws IOException, FileNotFoundException {
+        public void show() throws IOException {
             System.err.println("B");
         }
     }
