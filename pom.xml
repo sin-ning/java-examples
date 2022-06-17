@@ -54,7 +54,7 @@
         <skywalking.version>6.1.0</skywalking.version>
         <servlet.version>2.5</servlet.version>
         <seata.version>0.5.1</seata.version>
-        <drools.version>7.10.0.Final</drools.version>
+        <drools.version>7.60.0.Final</drools.version>
 
         <prometheus-spring-boot.version>0.6.0</prometheus-spring-boot.version>
         <micrometer.version>1.1.4</micrometer.version>
